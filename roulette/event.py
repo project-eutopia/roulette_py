@@ -24,3 +24,14 @@ class Event(object):
 
     def __repr__(self):
         return "%s(%r)" % (self.__class__, self.__dict__)
+
+    def draw_ax(self, ax):
+        if self.particle_type == self.ParticleType.PHOTON:
+            color = "green"
+        else:
+            color = "blue"
+
+        ax.plot([self.initial_position[0], self.final_position[0]], [self.initial_position[1], self.final_position[1]], [self.initial_position[2], self.final_position[2]], color = color, linewidth=0.5)
+
+        for child in self.children:
+            child.draw_ax(ax)

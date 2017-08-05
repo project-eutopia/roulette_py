@@ -1,4 +1,4 @@
-from roulette.simulation import Simulation
+from roulette.source_simulation import SourceSimulation
 
-s = Simulation("/home/chris/cpp/roulette/build/simulation_0.sim")
+s = SourceSimulation("/home/chris/cpp/roulette/build/simulation_0.json")
 import code; code.interact(local=locals())
